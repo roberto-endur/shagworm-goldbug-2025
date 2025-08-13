@@ -94,15 +94,13 @@ Each puzzle has a difficulty rating set by the puzzle masters of 1 to 5 stars - 
 If you have questions, feel free to ping us on discord: @rlama__ or @cooper7840`;
 
   const base = import.meta.env.BASE_URL || "/";
-  const parchmentUrl = `${base}assets/pirate/parchment.jpg`;
-  const compassUrl = `${base}assets/pirate/compass-rose.png`;
+  const goldbugUrl = `${base}assets/pirate/goldbug.png`;
 
   return (
     <div
       className="min-h-screen bg-black/80 text-green-300 relative"
       style={{
         fontFamily: "'VT323', ui-monospace, SFMono-Regular, Menlo, monospace",
-        ['--parchment-bg' as any]: `url('${parchmentUrl}')`,
       }}
     >
       <div className="mx-auto max-w-5xl px-4 py-6">
@@ -112,15 +110,18 @@ If you have questions, feel free to ping us on discord: @rlama__ or @cooper7840`
 
         <div className="border border-green-600/40 rounded-sm p-4 bg-green-900/10">
           <div className="flex items-center justify-between mb-4">
+            <h3 className="text-2xl text-green-200">
+              Captain’s Log
+            </h3>
             <div className="flex items-center gap-3">
-              <span className="text-yellow-300 font-mono text-sm">
-                {isPirateMode ? "🏴‍☠️ Pirate Mode" : "⚓ Landlubber Mode"}
-              </span>
               <Switch
                 checked={isPirateMode}
                 onCheckedChange={setIsPirateMode}
                 className="data-[state=checked]:bg-yellow-500 data-[state=unchecked]:bg-green-600"
               />
+              <span className="text-yellow-300 font-mono text-sm">
+                {isPirateMode ? "🏴‍☠️ Pirate Mode" : "⚓ Landlubber Mode"}
+              </span>
             </div>
           </div>
           <div className="text-lg whitespace-pre-line">
@@ -201,7 +202,7 @@ If you have questions, feel free to ping us on discord: @rlama__ or @cooper7840`
                 aria-hidden
                 className="pointer-events-none absolute inset-2 rounded-sm opacity-5"
                 style={{
-                  backgroundImage: `url('${compassUrl}')`,
+                  backgroundImage: `url('${goldbugUrl}')`,
                   backgroundSize: "200px",
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "right bottom",
